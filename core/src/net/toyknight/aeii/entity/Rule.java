@@ -16,8 +16,8 @@ import static net.toyknight.aeii.entity.Rule.Entry.CASTLE_CLEAR;
  */
 public class Rule implements Serializable {
 
-    public static final Integer[] GOLD_PRESET = new Integer[]{200, 250, 300, 450, 500, 550, 700, 850, 1000, 1500, 2000};
-    public static final Integer[] POPULATION_PRESET = new Integer[]{15, 20, 25, 30, 35, 40};
+    public static final Integer[] GOLD_PRESET = new Integer[]{200, 250, 300, 450, 500, 550, 700, 850, 1000, 1500, 2000, 2500, 3000, 4000, 5000};
+    public static final Integer[] POPULATION_PRESET = new Integer[]{15, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 100, 150, 200, 250, 300, 350, 400, 500};
 
     public static final int POISON_DAMAGE = 10;
     public static final int HEALER_BASE_HEAL = 40;
