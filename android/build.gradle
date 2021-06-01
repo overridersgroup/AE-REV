@@ -1,6 +1,6 @@
 android {
-    buildToolsVersion '22.0.1'
-    compileSdkVersion 23
+    buildToolsVersion '28.0.3'
+    compileSdkVersion 28
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -9,23 +9,33 @@ android {
             renderscript.srcDirs = ['src']
             res.srcDirs = ['res']
             assets.srcDirs = ['assets']
+            jniLibs.srcDir 'libs'
+            jniLibs.srcDir new File(buildDir, 'lib')
         }
 
-        instrumentTest.setRoot('tests')
+        androidTest.setRoot('tests')
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     defaultConfig {
         applicationId "net.toyknight.aeii.android"
+        minSdkVersion 8
     }
 }
 // needed to add JNI shared libraries to APK when compiling on CLI
-tasks.withType(com.android.build.gradle.tasks.PackageApplication) { pkgTask ->
+
+    // COMMENTED HERE TO REMOVE PROBLEM
+
+/*
+    Cannot set the value of read-only property 'jniFolders' for task ':android:packageDebug' of type com.android.build.gradle.tasks.PackageApplication.
+* */
+
+/*tasks.withType(com.android.build.gradle.tasks.PackageApplication) { pkgTask ->
     pkgTask.jniFolders = new HashSet<File>()
     pkgTask.jniFolders.add(new File(projectDir, 'libs'))
-}
+}*/
 // called every time gradle gets executed, takes the native dependencies of
 // the natives configuration, and extracts them to the proper libs/ folders
 // so they get packed with the APK.

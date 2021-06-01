@@ -2,10 +2,13 @@ buildscript {
     repositories {
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        google()
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
-        classpath 'org.robovm:robovm-gradle-plugin:1.0.0'
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'org.robovm:robovm-gradle-plugin:1.9.0'
+
     }
 }
 
@@ -30,6 +33,12 @@ allprojects {
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+        google()
+        jcenter()
+    }
+
+    configurations.all {
+        resolutionStrategy.force 'org.objenesis:objenesis:2.6'
     }
 }
 
@@ -38,11 +47,11 @@ project(":desktop") {
 
 
     dependencies {
-        compile project(":core")
-        compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-        compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+        implementation project(":core")
+        implementation "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+        implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+        implementation "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
+        implementation "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
     }
 }
 
@@ -52,12 +61,12 @@ project(":android") {
     configurations { natives }
 
     dependencies {
-        compile project(":core")
-        compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
+        implementation project(":core")
+        implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
-        compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+        implementation "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
@@ -71,10 +80,10 @@ project(":ios") {
     configurations { natives }
 
     dependencies {
-        compile project(":core")
-        compile "org.robovm:robovm-rt:${roboVMVersion}"
-        compile "org.robovm:robovm-cocoatouch:${roboVMVersion}"
-        compile "com.badlogicgames.gdx:gdx-backend-robovm:$gdxVersion"
+        implementation project(":core")
+        implementation "org.robovm:robovm-rt:${roboVMVersion}"
+        implementation "org.robovm:robovm-cocoatouch:${roboVMVersion}"
+        implementation "com.badlogicgames.gdx:gdx-backend-robovm:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
     }
@@ -84,10 +93,10 @@ project(":server") {
     apply plugin: "java"
 
     dependencies {
-        compile project(":core")
-        compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'
-        compile "com.esotericsoftware:kryonet:$kryonetVersion"
-        compile "org.json:json:$jsonVersion"
+        implementation project(":core")
+        implementation group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'
+        implementation "com.esotericsoftware:kryonet:$kryonetVersion"
+        implementation "org.json:json:$jsonVersion"
     }
 }
 
@@ -95,10 +104,10 @@ project(":core") {
     apply plugin: "java"
 
     dependencies {
-        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-        compile "com.esotericsoftware:kryonet:$kryonetVersion"
-        compile "org.json:json:$jsonVersion"
+        implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
+        implementation "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+        implementation "com.esotericsoftware:kryonet:$kryonetVersion"
+        implementation "org.json:json:$jsonVersion"
     }
 }
 

@@ -9,7 +9,7 @@ ext {
 
 // Extracts native libs (*.a) from the native-ios.jar and places them
 // under build/libs/ios/.
-task copyNatives << {
+task copyNatives doLast {
   file("build/libs/ios/").mkdirs();
   configurations.natives.files.each { jar ->
     def outputDir = null
@@ -25,7 +25,7 @@ task copyNatives << {
 }
 
 // Updates a robovm.xml file.
-task updateRoboVMXML << {
+task updateRoboVMXML doLast {
   def xml = file('robovm.xml')
 
   if (!xml.exists()) {
