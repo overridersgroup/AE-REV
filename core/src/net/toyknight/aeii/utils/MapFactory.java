@@ -163,6 +163,27 @@ public class MapFactory {
         Array<MapSnapshot> snapshots = new Array<MapSnapshot>();
         for (int i = 0; i < map_count; i++) {
             String map_name = din.nextLine().trim();
+            /*
+            *       MISSING FILE NAME 200
+            * */
+            if (map_name.equalsIgnoreCase("crossroads.aem") || map_name.equalsIgnoreCase("mourningstar.aem")
+                    || map_name.equalsIgnoreCase("the crossing.aem") || map_name.equalsIgnoreCase("waterways.aem")
+                    || map_name.equalsIgnoreCase("winterstorm.aem") || map_name.equalsIgnoreCase("classic 1.aem")
+                    || map_name.equalsIgnoreCase("duel.aem") || map_name.equalsIgnoreCase("crossed swords.aem")
+                    || map_name.equalsIgnoreCase("critical mass.aem")|| map_name.equalsIgnoreCase("swamplands.aem")) {
+                System.out.println(map_name + " map name reset");
+                String nameWithoutExtension = map_name.substring(0, map_name.length()-4);
+                map_name = nameWithoutExtension + " 200.aem";
+            }
+            /*
+             *       MISSING FILE NAME 300
+             * */
+            else if (map_name.equalsIgnoreCase("peak island.aem") || map_name.equalsIgnoreCase("shadowlands.aem")
+                    || map_name.equalsIgnoreCase("the crucible.aem")) {
+                System.out.println(map_name + " map name reset");
+                String nameWithoutExtension = map_name.substring(0, map_name.length()-4);
+                map_name = nameWithoutExtension + " 300.aem";
+            }
             MapSnapshot snapshot = createMapSnapshot(FileProvider.getAssetsFile("map/" + map_name));
             if (snapshot != null) {
                 snapshots.add(snapshot);
