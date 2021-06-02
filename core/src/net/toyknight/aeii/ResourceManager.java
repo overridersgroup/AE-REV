@@ -256,7 +256,7 @@ public class ResourceManager {
         bg_team[0] = new Texture(createColoredPixmap(new Color(0f, 100 / 256f, 198 / 256f, 1f)));
         bg_team[1] = new Texture(createColoredPixmap(new Color(161 / 256f, 0f, 112 / 256f, 1f)));
         bg_team[2] = new Texture(createColoredPixmap(new Color(0f, 153 / 256f, 55 / 256f, 1f)));
-        bg_team[3] = new Texture(createColoredPixmap(new Color(0f, 65 / 256f, 114 / 256f, 1f)));
+        bg_team[3] = new Texture(createColoredPixmap(new Color(255 / 256f, 153 / 256f, 0f, 1f)));
         bg_text = new Texture(createColoredPixmap(new Color(192 / 256f, 192 / 256f, 192 / 256f, 0.8f)));
         color_border_dark = new Texture(createColoredPixmap(new Color(66 / 256f, 73 / 256f, 99 / 256f, 1f)));
         color_border_light = new Texture(createColoredPixmap(new Color(173 / 256f, 182 / 256f, 173 / 256f, 1f)));
