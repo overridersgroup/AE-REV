@@ -1,0 +1,18 @@
+{
+"price": 5000,
+"occupancy":10,
+"max_hp": 500,
+"attack": 10,
+"attack_type": 1,
+"physical_defence": 0,
+"magic_defence": 0,
+"movement_point": 2,
+"abilities": [ 2, 4, 11, 14, 17, 25 ],
+"hp_growth": 0,
+"attack_growth": 25,
+"physical_defence_growth": 15,
+"magic_defence_growth": 15,
+"movement_growth": 1,
+"max_attack_range": 1,
+"min_attack_range": 1
+}
