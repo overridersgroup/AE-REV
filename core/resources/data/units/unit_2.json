@@ -1,7 +1,7 @@
 {
 "price": 300,
 "occupancy":1,
-"max_hp": 100,
+"max_hp": 80,
 "attack": 60,
 "attack_type": 0,
 "physical_defence": 10,

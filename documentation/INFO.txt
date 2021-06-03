@@ -1,0 +1,5 @@
+CLASSES
+
++ GameCore manages gameplay ~
++ UnitToolkit has info about abilities' effects
++ MapFactory manages maps ~

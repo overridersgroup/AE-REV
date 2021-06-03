@@ -1,0 +1,17 @@
+{
+	price -> price of the unit
+	occupancy -> number of people occupied by the unit
+	max_hp -> hp of the unit
+	attack -> damage of the unit
+	physical_defence -> physical defence of the unit
+	magic_defence -> magic defence of the unit
+	movement_point -> number of cells where the unit can move
+	abilities -> array of abilities reported in file src/net.toykight.aeii/entity/Ability.java
+	hp_growth -> hp improvement with a new level
+	attack_growth -> attack improvement with a new level
+	physical_defence_growth -> phy def improvement with a new level
+	magic_defence_growth -> magic def improvement with a new level
+	movement_growth -> mov improvement with a new level
+	max_attack_range -> max attack range (max distance in n. of cells)
+	min_attack_range -> min attack range (min distance in n. of cells)
+}

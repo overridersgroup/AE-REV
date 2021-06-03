@@ -6,13 +6,13 @@
 "attack_type": 0,
 "physical_defence": 20,
 "magic_defence": 5,
-"movement_point": 6,
-"abilities": [ 8, 9, 16 ],
+"movement_point": 5,
+"abilities": [ 5, 8, 9 ],
 "hp_growth": 0,
 "attack_growth": 10,
 "physical_defence_growth": 5,
 "magic_defence_growth": 5,
-"movement_growth": 0,
+"movement_growth": 1,
 "max_attack_range": 1,
 "min_attack_range": 1
 }

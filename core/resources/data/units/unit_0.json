@@ -6,7 +6,7 @@
 "attack_type": 0,
 "physical_defence": 5,
 "magic_defence": 5,
-"movement_point": 4,
+"movement_point": 3,
 "abilities": [ 0, 10 ],
 "hp_growth": 0,
 "attack_growth": 10,
