@@ -532,6 +532,12 @@ UNIT_NAME_28=Skeleton Warrior
 UNIT_NAME_29=Skeleton Mage
 UNIT_NAME_30=Demon
 UNIT_NAME_31=Viking
+UNIT_NAME_32=Zombie
+UNIT_NAME_33=Skeleton King
+UNIT_NAME_34=Mummy Queen
+UNIT_NAME_35=Mummy
+UNIT_NAME_36=Bat Witch
+UNIT_NAME_37=Skeleton Archer
 
 UNIT_DESCRIPTION_0=A simple soldier capable of capturing and repairing houses. Very simple, isn't it?
 UNIT_DESCRIPTION_1=Archers are a great offensive ranged unit, but a shame in head-to-head matches.
@@ -565,6 +571,12 @@ UNIT_DESCRIPTION_28=If the skeleton is not your thing, then the warrior skeleton
 UNIT_DESCRIPTION_29=Who ever said skeletons can't practice dark magic?
 UNIT_DESCRIPTION_30=Invoked through ancient rites, the Demon will learn to destroy by attacking the enemy more and more.
 UNIT_DESCRIPTION_31=Coming from faraway lands, the Viking adapts to many terrains and gladly helps his companions in need.
+UNIT_DESCRIPTION_32=A stupid and weak zombie. Nothing special.
+UNIT_DESCRIPTION_33=The Skeleton King is a powerful unit that inflicts great damages on distance, but he's very vulnerable. He can summons his friends.
+UNIT_DESCRIPTION_34=The Mummy Queen is an ancient summoner with many hp, but he's so weak both in attack and defense. Her summons, anyway, are little tanks with some damage.
+UNIT_DESCRIPTION_35=Sturdy and strong enough when upgraded, the mummies will follow enemies tormenting them.
+UNIT_DESCRIPTION_36=Is it halloween? I see bats flying everywhere...
+UNIT_DESCRIPTION_37=A bunch of bones capable of firing poisoned arrows at good ranges.
 
 UNIT_GUIDE_0=Soldiers are very useful in the early game, they can capture or repair villages to give you advantage. Although soldiers are not very powerful fighters, they can deal some decent damages to enemies with low physical defence.
 UNIT_GUIDE_1=Archers start with quite low attack power, but due to their long attack range you can level them up more easily then soldiers. As they level up their attack will be more powerful. Meanwhile archers are also good at destroying air forces.

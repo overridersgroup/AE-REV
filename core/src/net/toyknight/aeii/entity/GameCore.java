@@ -487,7 +487,8 @@ public class GameCore implements Serializable {
     }
 
     public boolean canSummon(Unit summoner, int x, int y) {
-        return summoner.hasAbility(Ability.NECROMANCER)
+        return summoner.hasAbility(Ability.NECROMANCER) || summoner.hasAbility(Ability.BAT_NECROMANCER) ||
+                summoner.hasAbility(Ability.MUMMY_NECROMANCER) || summoner.hasAbility(Ability.SKELETON_NECROMANCER)
                 && UnitToolkit.isWithinRange(summoner, x, y)
                 && getMap().isTomb(x, y) && getMap().getUnit(x, y) == null;
     }

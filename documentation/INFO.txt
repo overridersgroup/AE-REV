@@ -1,5 +1,8 @@
 CLASSES
 
 + GameCore manages gameplay ~
++ GameCore.destroyUnit destroys the selected unit
++ GameCore.createUnit invokes a new unit
 + UnitToolkit has info about abilities' effects
 + MapFactory manages maps ~
++ GameEventExecutor.onSummon summons a skeleton

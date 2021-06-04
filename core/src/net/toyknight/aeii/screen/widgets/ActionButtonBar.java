@@ -162,7 +162,10 @@ public class ActionButtonBar extends AEIIHorizontalGroup {
                         if (getManager().hasEnemyWithinRange(selected_unit)) {
                             addActor(buttons.get("attack"));
                         }
-                        if (selected_unit.hasAbility(Ability.NECROMANCER)
+                        if ((selected_unit.hasAbility(Ability.NECROMANCER) ||
+                                selected_unit.hasAbility(Ability.BAT_NECROMANCER) ||
+                                selected_unit.hasAbility(Ability.MUMMY_NECROMANCER) ||
+                                selected_unit.hasAbility(Ability.SKELETON_NECROMANCER))
                                 && getManager().hasTombWithinRange(selected_unit)) {
                             addActor(buttons.get("summon"));
                         }

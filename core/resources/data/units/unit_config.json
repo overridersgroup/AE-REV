@@ -1,6 +1,12 @@
 {
-  "unit_count": 32,
+  "unit_count": 38,
   "commander_index": 9,
   "skeleton_index": 10,
-  "crystal_index": 11
+  "crystal_index": 11,
+  "zombie_index" : 32,
+  "mummy_index" : 35,
+  "bat_index" : 27,
+  "archer_sk_index" : 37
+  "warrior_sk_index" : 28
+  "mage_sk_index" : 29
 }

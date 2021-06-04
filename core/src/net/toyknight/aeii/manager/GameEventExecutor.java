@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
 
 /**
  * @author toyknight 11/1/2015.
@@ -511,7 +512,8 @@ public class GameEventExecutor {
             //deal with tombs
             if (getGame().getMap().isTomb(unit.getX(), unit.getY())) {
                 getGame().getMap().removeTomb(unit.getX(), unit.getY());
-                if (!unit.hasAbility(Ability.NECROMANCER)) {
+                if (!unit.hasAbility(Ability.NECROMANCER) && !unit.hasAbility(Ability.SKELETON_NECROMANCER)
+                || !unit.hasAbility(Ability.MUMMY_NECROMANCER) || !unit.hasAbility(Ability.BAT_NECROMANCER)) {
                     unit.attachStatus(new Status(Status.POISONED, 1));
                 }
             }
@@ -551,7 +553,28 @@ public class GameEventExecutor {
 
             Unit summoner = getGame().getMap().getUnit(summoner_x, summoner_y);
             getGame().getMap().removeTomb(target_x, target_y);
-            getGame().createUnit(UnitFactory.getSkeletonIndex(), summoner.getTeam(), target_x, target_y);
+            if (summoner.hasAbility(Ability.NECROMANCER)) {
+                getGame().createUnit(UnitFactory.getZombieIndex(), summoner.getTeam(), target_x, target_y);
+            } else if (summoner.hasAbility(Ability.SKELETON_NECROMANCER)) {
+                Random r = new Random();
+                int randomSummon = 1 + r.nextInt(10); // 1 to 10
+                if (randomSummon >= 1 && randomSummon <= 6)
+                    getGame().createUnit(UnitFactory.getSkeletonIndex(), summoner.getTeam(), target_x, target_y);
+                else if (randomSummon == 7 || randomSummon == 8) {
+                    getGame().createUnit(UnitFactory.getWarriorSkeletonIndex(), summoner.getTeam(), target_x, target_y);
+                }
+                else if (randomSummon == 9) {
+                    getGame().createUnit(UnitFactory.getArcherSkeletonIndex(), summoner.getTeam(), target_x, target_y);
+                }
+                else if (randomSummon == 10) {
+                    getGame().createUnit(UnitFactory.getMageSkeletonIndex(), summoner.getTeam(), target_x, target_y);
+                }
+            } else if (summoner.hasAbility(Ability.MUMMY_NECROMANCER)) {
+                getGame().createUnit(UnitFactory.getMummyIndex(), summoner.getTeam(), target_x, target_y);
+            } else if (summoner.hasAbility(Ability.BAT_NECROMANCER)) {
+                getGame().createUnit(UnitFactory.getBatIndex(), summoner.getTeam(), target_x, target_y);
+            } else throw new CheatingException("Summon doesn't exists", getGame().getCurrentTeam());
+
             getAnimationDispatcher().submitSummonAnimation(summoner, target_x, target_y);
         } else {
             throw new CheatingException("summoning check failed!", getGame().getCurrentTeam());

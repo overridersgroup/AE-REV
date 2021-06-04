@@ -324,7 +324,7 @@ public class Robot {
                     }
                     synchronized (GameContext.RENDER_LOCK) {
                         if (getGame().getMap().isTomb(target_position)
-                                && selected_unit.hasAbility(Ability.NECROMANCER)) {
+                                && (selected_unit.hasAbility(Ability.NECROMANCER))) {
                             actions.add(new Action(position, target_position, Operation.SUMMON));
                         }
                     }

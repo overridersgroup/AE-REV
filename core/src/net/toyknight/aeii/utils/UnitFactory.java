@@ -48,6 +48,30 @@ public class UnitFactory {
         return unit_config.skeleton_index;
     }
 
+    public static int getWarriorSkeletonIndex() {
+        return unit_config.warrior_sk_index;
+    }
+
+    public static int getArcherSkeletonIndex() {
+        return unit_config.archer_sk_index;
+    }
+
+    public static int getMageSkeletonIndex() {
+        return unit_config.mage_sk_index;
+    }
+
+    public static int getMummyIndex() {
+        return unit_config.mummy_index;
+    }
+
+    public static int getBatIndex() {
+        return unit_config.bat_index;
+    }
+
+    public static int getZombieIndex() {
+        return unit_config.zombie_index;
+    }
+
     public static boolean isSkeleton(int index) {
         return index == getSkeletonIndex();
     }
@@ -132,6 +156,18 @@ public class UnitFactory {
         public int skeleton_index;
 
         public int crystal_index;
+
+        public int zombie_index;
+
+        public int mummy_index;
+
+        public int bat_index;
+
+        public int archer_sk_index;
+
+        public int warrior_sk_index;
+
+        public int mage_sk_index;
 
     }
 

@@ -138,9 +138,11 @@ public class Rule implements Serializable {
         int commander = UnitFactory.getCommanderIndex();
         int skeleton = UnitFactory.getSkeletonIndex();
         int crystal = UnitFactory.getCrystalIndex();
+        int zombie = UnitFactory.getZombieIndex();
+        int mummy = UnitFactory.getMummyIndex();
         Array<Integer> unit_list = new Array<Integer>();
         for (int index = 0; index < UnitFactory.getUnitCount(); index++) {
-            if (index != commander && index != skeleton && index != crystal) {
+            if (index != commander && index != skeleton && index != crystal && index != zombie && index != mummy) {
                 unit_list.add(index);
             }
         }
