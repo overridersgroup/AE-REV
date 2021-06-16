@@ -207,6 +207,8 @@ public class OperationExecutor {
                         getGame().getRule().getInteger(ATTACK_EXPERIENCE));
             } else {
                 int attack_damage = getManager().getUnitToolkit().getDamage(attacker, defender, true);
+                if (attacker.hasAbility(Ability.UNDEAD_HUNTER) && defender.hasAbility(Ability.UNDEAD))
+                    attack_damage *= 2; // Double damage from hunter to undeads
                 submitGameEvent(GameEvent.ATTACK, attacker_x, attacker_y, target_x, target_y, attack_damage, false);
                 if (attack_damage < defender.getCurrentHp()) {
                     submitGameEvent(
@@ -233,6 +235,8 @@ public class OperationExecutor {
         Unit defender = getGame().getMap().getUnit(target_x, target_y);
         if (getGame().canCounter(attacker, defender)) {
             int counter_damage = getManager().getUnitToolkit().getDamage(defender, attacker, true);
+            if (defender.hasAbility(Ability.UNDEAD_HUNTER) && attacker.hasAbility(Ability.UNDEAD))
+                counter_damage *= 2; // Double damage from hunter to undeads
             submitGameEvent(GameEvent.ATTACK, target_x, target_y, attacker_x, attacker_y, counter_damage, true);
             if (counter_damage < attacker.getCurrentHp()) {
                 submitGameEvent(

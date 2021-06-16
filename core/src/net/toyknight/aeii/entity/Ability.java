@@ -39,6 +39,7 @@ public class Ability {
     public static final int SKELETON_NECROMANCER = 29;
     public static final int MUMMY_NECROMANCER = 30;
     public static final int BAT_NECROMANCER = 31;
+    public static final int UNDEAD_HUNTER = 32;
 
     public static Array<Integer> getAllAbilities() {
         Array<Integer> abilities = new Array<Integer>();

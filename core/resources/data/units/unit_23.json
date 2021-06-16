@@ -7,7 +7,7 @@
 "physical_defence": 20,
 "magic_defence": 20,
 "movement_point": 2,
-"abilities": [ 17, 20, 25, 28 ],
+"abilities": [ 0, 17, 20, 25, 28 ],
 "hp_growth": 10,
 "attack_growth": 10,
 "physical_defence_growth": 5,

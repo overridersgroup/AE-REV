@@ -538,6 +538,10 @@ UNIT_NAME_34=Mummy Queen
 UNIT_NAME_35=Mummy
 UNIT_NAME_36=Bat Witch
 UNIT_NAME_37=Skeleton Archer
+UNIT_NAME_38=Magun Warrior
+UNIT_NAME_39=Magun Archer
+UNIT_NAME_40=Hunter
+UNIT_NAME_41=Gladiator
 
 UNIT_DESCRIPTION_0=A simple soldier capable of capturing and repairing houses. Very simple, isn't it?
 UNIT_DESCRIPTION_1=Archers are a great offensive ranged unit, but a shame in head-to-head matches.
@@ -577,6 +581,10 @@ UNIT_DESCRIPTION_34=The Mummy Queen is an ancient summoner with many hp, but he'
 UNIT_DESCRIPTION_35=Sturdy and strong enough when upgraded, the mummies will follow enemies tormenting them.
 UNIT_DESCRIPTION_36=Is it halloween? I see bats flying everywhere...
 UNIT_DESCRIPTION_37=A bunch of bones capable of firing poisoned arrows at good ranges.
+UNIT_DESCRIPTION_38=The Magun warrior is a little and powerful warrior which his power increases on mountains.
+UNIT_DESCRIPTION_39=This archer is so tiny, but he's really powerful and accurate!
+UNIT_DESCRIPTION_40=The Hunter is the perfect unit to fight versus undead enemies.
+UNIT_DESCRIPTION_41=Behind this armor there's an invincible man..
 
 UNIT_GUIDE_0=Soldiers are very useful in the early game, they can capture or repair villages to give you advantage. Although soldiers are not very powerful fighters, they can deal some decent damages to enemies with low physical defence.
 UNIT_GUIDE_1=Archers start with quite low attack power, but due to their long attack range you can level them up more easily then soldiers. As they level up their attack will be more powerful. Meanwhile archers are also good at destroying air forces.
