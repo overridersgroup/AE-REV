@@ -181,6 +181,13 @@ public class UnitToolkit {
         if (attacker.hasStatus(Status.INSPIRED)) {
             attack_bonus += 10;
         }
+        // ARMOR_BREAKER POWERUP
+        if (attacker.hasAbility(Ability.ARMOR_BREAKER) && defender.getPhysicalDefence() >= 40) {
+            if (defender.getPhysicalDefence() >= 40 && defender.getPhysicalDefence() < 50) attack_bonus += 30;
+            else if (defender.getPhysicalDefence() >= 50 && defender.getPhysicalDefence() < 60) attack_bonus += 40;
+            else if (defender.getPhysicalDefence() >= 60 && defender.getPhysicalDefence() < 80) attack_bonus += 60;
+            else if (defender.getPhysicalDefence() >= 80) attack_bonus += 80;
+        }
         return attack_bonus;
     }
 
@@ -202,7 +209,8 @@ public class UnitToolkit {
         //calculate random damage offset
         int offset = apply_rng ? random.nextInt(5) - 2 : 0;
         //calculate final damage
-        damage = damage * attacker_hp / attacker_max_hp;
+        if (attacker.hasAbility(Ability.OVERFURY)) damage += damage * attacker_hp / attacker_max_hp;
+        else damage = damage * attacker_hp / attacker_max_hp;
         damage = damage > 0 ? damage : 0;
         //final damage percentage calculation
         float percentage_modifier = 1.0f;
@@ -214,6 +222,9 @@ public class UnitToolkit {
         if (getRange(attacker, defender) > 1 && defender.hasAbility(Ability.HARD_SKIN)) {
             percentage_modifier -= 0.5f;
         }
+        // UNDEAD_HUNTER POWERUP
+        if (attacker.hasAbility(Ability.UNDEAD_HUNTER) && defender.hasAbility(Ability.UNDEAD))
+            percentage_modifier += 1.0f; // Double damage from hunter to undeads
         percentage_modifier = percentage_modifier >= 0f ? percentage_modifier : 0f;
         damage = (int) (damage * percentage_modifier);
         damage += offset;
