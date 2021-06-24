@@ -182,11 +182,11 @@ public class UnitToolkit {
             attack_bonus += 10;
         }
         // ARMOR_BREAKER POWERUP
-        if (attacker.hasAbility(Ability.ARMOR_BREAKER) && defender.getPhysicalDefence() >= 40) {
-            if (defender.getPhysicalDefence() >= 40 && defender.getPhysicalDefence() < 50) attack_bonus += 30;
-            else if (defender.getPhysicalDefence() >= 50 && defender.getPhysicalDefence() < 60) attack_bonus += 40;
-            else if (defender.getPhysicalDefence() >= 60 && defender.getPhysicalDefence() < 80) attack_bonus += 60;
-            else if (defender.getPhysicalDefence() >= 80) attack_bonus += 80;
+        if (attacker.hasAbility(Ability.ARMOR_BREAKER) && defender.getPhysicalDefence() >= 40 && !defender.hasAbility(Ability.AIR_FORCE)) {
+            if (defender.getPhysicalDefence() >= 40 && defender.getPhysicalDefence() < 50) attack_bonus += 40;
+            else if (defender.getPhysicalDefence() >= 50 && defender.getPhysicalDefence() < 60) attack_bonus += 60;
+            else if (defender.getPhysicalDefence() >= 60 && defender.getPhysicalDefence() < 80) attack_bonus += 80;
+            else if (defender.getPhysicalDefence() >= 80) attack_bonus += 100;
         }
         return attack_bonus;
     }
@@ -209,7 +209,7 @@ public class UnitToolkit {
         //calculate random damage offset
         int offset = apply_rng ? random.nextInt(5) - 2 : 0;
         //calculate final damage
-        if (attacker.hasAbility(Ability.OVERFURY)) damage += damage * attacker_hp / attacker_max_hp;
+        if (attacker.hasAbility(Ability.OVERFURY)) damage += ((100 - ((attacker_hp  * 100)/ attacker_max_hp)) * damage) / 100;
         else damage = damage * attacker_hp / attacker_max_hp;
         damage = damage > 0 ? damage : 0;
         //final damage percentage calculation

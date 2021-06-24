@@ -542,6 +542,8 @@ UNIT_NAME_38=Magun Warrior
 UNIT_NAME_39=Magun Archer
 UNIT_NAME_40=Hunter
 UNIT_NAME_41=Gladiator
+UNIT_NAME_42=Armor Breaker
+UNIT_NAME_43=Bloody Slayer
 
 UNIT_DESCRIPTION_0=A simple soldier capable of capturing and repairing houses. Very simple, isn't it?
 UNIT_DESCRIPTION_1=Archers are a great offensive ranged unit, but a shame in head-to-head matches.
