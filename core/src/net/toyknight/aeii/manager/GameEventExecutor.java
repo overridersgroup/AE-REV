@@ -618,6 +618,7 @@ public class GameEventExecutor {
             onCheckTeamDestroy(unit.getTeam());
 
             getManager().fireUnitDestroyEvent(unit);
+            if (unit.hasAbility(Ability.SOLDIER_SPAWNER)) getGame().createUnit(0, unit.getTeam(), target_x, target_y);
         } else {
             throw new CheatingException("unit destroying check failed", getGame().getCurrentTeam());
         }
